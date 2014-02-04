@@ -8,6 +8,7 @@ var routes = require('./routes');
 var user = require('./routes/user');
 var getgoogletrends = require('./routes/getgoogletrends');
 var getTrendingItems = require('./routes/getTrendingItems');
+var ebayproducts = require('./routes/ebayproducts');
 var http = require('http');
 var path = require('path');
 
@@ -34,6 +35,7 @@ app.get('/', routes.index);
 app.get('/users', user.list);
 app.get('/getgoogletrends', getgoogletrends.list);
 app.get('/getTrendingItems', getTrendingItems.index);
+app.get('/ebayproducts', ebayproducts.index);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
